@@ -1,0 +1,12 @@
+.headertron {
+    padding-top: 30px; padding-bottom: 30px;
+    margin-top: -20px;
+    background: #bbb;
+}
+
+.headertron h2 { margin: 0; }
+.headertron p { padding: 0; margin: 4px 0 0; }
+
+.pattern { color:white; background-image: url("office.png");}
+
+.padding-top-1 { padding-top: 1rem; }

@@ -1,0 +1,22 @@
+{
+  "name": "dudel.php",
+  "authors": [
+    "Johannes Lauinger <johannes@lauinger-it.de>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "AGPL",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

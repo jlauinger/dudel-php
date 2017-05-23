@@ -1,0 +1,7 @@
+; enter your database connection details below
+; then save this file as ".htconfig.ini"
+
+[db]
+dsn="mysql:host=localhost; dbname=dudelphp; port=3306;"
+user="dudelphp"
+password="changeme1"

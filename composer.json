@@ -1,0 +1,19 @@
+{
+    "name": "jlauinger/dudel.php",
+    "description": "Collaboratively find dates. Also, deployable.",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Johannes Lauinger",
+            "email": "johannes@lauinger-it.de"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dudel\\": "app/"
+        }
+    }
+}
