@@ -14,9 +14,43 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h3>Create a new poll</h3>
+            <h3><span class="fa fa-plus"></span> Create a new poll</h3>
 
-            TODO
+            <form action="{{@BASE}}/polls" method="post" class="form">
+                <div class="form-group">
+                    <label for="title">Title (optional):</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Breakfast at Tiffany's" />
+                </div>
+                <div class="form-group">
+                    <label for="title">Shortlink:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{@HOST}}{{@BASE}}/</span>
+                        <input type="text" name="shortlink" id="shortlink" class="form-control" value="xhsj5fl" />
+                        <span class="input-group-btn">
+                            <a class="btn btn-default" id="new-shortlink">
+                                <span class="fa fa-random"></span> renew
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description (optional):</label>
+                    <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+                <check if="{{ @SESSION.userid }}">
+                    <false>
+                        <p><b><span class="fa fa-warning"></span> Anonymous Poll</b></p>
+                        You are creating this poll anonymously. Everybody will be able to change it. You can also sign in first.
+                    </false>
+                </check>
+                <div class="padding-top-1"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-large btn-primary">
+                        <span class="fa fa-credit-card"></span>
+                        Create &amp; Choose time slots
+                    </button>
+                </div>
+            </form>
         </div>
 
         <div class="col-md-6">
@@ -54,3 +88,8 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+</script>

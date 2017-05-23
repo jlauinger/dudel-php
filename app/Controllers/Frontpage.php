@@ -3,7 +3,7 @@
 namespace Dudel\Controllers;
 
 
-class Welcome {
+class Frontpage {
 
     public static function index(\Base $f3) {
         $f3->set("content", "frontpage.html");
