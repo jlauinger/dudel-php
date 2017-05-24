@@ -27,14 +27,14 @@ CREATE TABLE `polls` (
   `title` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `shortlink` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `owner_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `dudels_shortlink_uindex` (`shortlink`),
   KEY `dudels_users_id_fk` (`owner_id`),
   CONSTRAINT `dudels_users_id_fk` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,11 +47,11 @@ DROP TABLE IF EXISTS `slots`;
 CREATE TABLE `slots` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `poll_id` int(11) NOT NULL,
-  `time` datetime NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `slots_polls_id_fk` (`poll_id`),
   CONSTRAINT `slots_polls_id_fk` FOREIGN KEY (`poll_id`) REFERENCES `polls` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,8 +66,8 @@ CREATE TABLE `users` (
   `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `displayname` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_uindex` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -86,8 +86,8 @@ CREATE TABLE `votes` (
   `user_id` int(11) DEFAULT NULL,
   `displayname` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `comment` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `votes_slots_id_fk` (`slot_id`),
   KEY `votes_users_id_fk` (`user_id`),
@@ -105,4 +105,4 @@ CREATE TABLE `votes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-24  2:12:20
+-- Dump completed on 2017-05-24  2:26:10
