@@ -1,0 +1,70 @@
+<h4>Available Time Slots</h4>
+<div class="padding-top-1"></div>
+
+<div class="row">
+    <div class="col-sm-4"><div class="alert alert-default"><b>Step 1</b><br />Choose Days</div></div>
+    <div class="col-sm-4"><div class="alert alert-default"><b>Step 2</b><br />Choose Times</div></div>
+    <div class="col-sm-4"><div class="alert alert-success"><b>Step 3</b><br />Select Combinations</div></div>
+</div>
+
+<form action="{{@BASE}}/{{@poll[shortlink]}}" method="post" class="form">
+
+    <input type="hidden" name="step" value="3" />
+    <input type="hidden" name="shortlink" value="{{@poll[shortlink]}}" />
+    <input type="hidden" name="csrf_token" value="{{ @SESSION.csrf }}" />
+
+    <p>
+        <span class="fa fa-info-circle"></span>&nbsp;
+        Please select which times should be applicable to which dates.
+    </p>
+
+    <div class="padding-top-1"></div>
+    <div class="table-responsive">
+        <table class="table auto-width poll">
+            <tr>
+                <th></th>
+                <repeat group="{{@times}}" value="{{@time}}">
+                    <th class="choice-text">{{@time}}</th>
+                </repeat>
+            </tr>
+
+            <repeat group="{{@dates}}" value="{{@date}}">
+                <tr>
+                    <th class="author">{{ date('d.m.Y', strtotime(@date)) }}</th>
+                    <repeat group="{{@times}}" value="{{@time}}">
+                        <td class="checkbox-cell">
+                            <input type="checkbox" name="datetimes[]" value="{{@date}} {{@time}}" checked="checked" />
+                        </td>
+                    </repeat>
+                    <td class="choice-text">
+                        <button class="action icon toggle toggle-select toggle-row">all</button>
+                        <button class="action icon toggle toggle-deselect toggle-row">none</button>
+                    </td>
+                </tr>
+            </repeat>
+
+            <tr>
+                <td></td>
+                <repeat group="{{@times}}" value="{{@time}}">
+                    <td class="choice-text">
+                        <button class="action icon toggle toggle-select toggle-column">all</button>
+                        <button class="action icon toggle toggle-deselect toggle-column">none</button>
+                    </td>
+                </repeat>
+                <td>
+                    <button class="action icon toggle toggle-select toggle-all">all</button>
+                    <button class="action icon toggle toggle-deselect toggle-all">none</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="padding-top-1"></div>
+    <div class="form-group choices-actions">
+        <a href="{{@BASE}}/{{@poll[shortlink]}}/choices/2" class="btn btn-default">Previous</a>
+        <button type="submit" class="btn btn-large btn-primary">
+            <span class="fa fa-check"></span>
+            Finish
+        </button>
+    </div>
+</form>

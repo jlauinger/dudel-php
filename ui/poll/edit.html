@@ -1,0 +1,24 @@
+<h4>General Settings</h4>
+<div class="padding-top-1"></div>
+
+<form action="{{@BASE}}/{{@poll[shortlink]}}" method="post" class="form">
+
+    <input type="hidden" name="id" value="{{@poll[id]}}" />
+    <input type="hidden" name="csrf_token" value="{{ @SESSION.csrf }}">
+
+    <div class="form-group">
+        <label for="title">Title (optional):</label>
+        <input type="text" name="title" id="title" class="form-control" value="{{@poll[title]}}" />
+    </div>
+    <div class="form-group">
+        <label for="description">Description (optional):</label>
+        <textarea name="description" id="description" class="form-control">{{@poll[description]}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-large btn-primary">
+            <span class="fa fa-check"></span>
+            Save
+        </button>
+    </div>
+</form>

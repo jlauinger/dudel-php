@@ -17,6 +17,7 @@
             <h3><span class="fa fa-plus"></span> Create a new poll</h3>
 
             <form action="{{@BASE}}/polls" method="post" class="form">
+                <input type="hidden" name="csrf_token" value="{{ @SESSION.csrf }}">
                 <div class="form-group">
                     <label for="title">Title (optional):</label>
                     <input type="text" name="title" id="title" class="form-control" placeholder="Breakfast at Tiffany's" />
@@ -25,7 +26,7 @@
                     <label for="title">Shortlink:</label>
                     <div class="input-group">
                         <span class="input-group-addon">{{@HOST}}{{@BASE}}/</span>
-                        <input type="text" name="shortlink" id="shortlink" class="form-control" value="xhsj5fl" />
+                        <input type="text" name="shortlink" id="shortlink" class="form-control" value="{{@shortlink}}" />
                         <span class="input-group-btn">
                             <a class="btn btn-default" id="new-shortlink">
                                 <span class="fa fa-random"></span> renew
@@ -43,6 +44,7 @@
                         You are creating this poll anonymously. Everybody will be able to change it. You can also sign in first.
                     </false>
                 </check>
+                <div class="padding-top-1"></div>
                 <div class="padding-top-1"></div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-large btn-primary">
@@ -65,7 +67,7 @@
                 </div>
             </check>
 
-            <form action={{@BASE}}/login" method="post" class="form-horizontal">
+            <form action="{{@BASE}}/login" method="post" class="form-horizontal">
                 <input type="hidden" name="csrf_token" value="{{ @SESSION.csrf }}">
                 <div class="form-group">
                     <label for="login_email" class="col-sm-2 control-label">E-Mail</label>

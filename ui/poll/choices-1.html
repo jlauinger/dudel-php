@@ -1,0 +1,61 @@
+<h4>Available Time Slots</h4>
+<div class="padding-top-1"></div>
+
+<div class="row">
+    <div class="col-sm-4"><div class="alert alert-success"><b>Step 1</b><br />Choose Days</div></div>
+    <div class="col-sm-4"><div class="alert alert-default"><b>Step 2</b><br />Choose Times</div></div>
+    <div class="col-sm-4"><div class="alert alert-default"><b>Step 3</b><br />Select Combinations</div></div>
+</div>
+
+<form action="{{@BASE}}/{{@poll[shortlink]}}" method="post" class="form">
+
+    <input type="hidden" name="step" value="1" />
+    <input type="hidden" name="shortlink" value="{{@poll[shortlink]}}" />
+    <input type="hidden" name="csrf_token" value="{{ @SESSION.csrf }}" />
+    <input type="hidden" name="dates" id="dates" value="{{ @dates }}" />
+    <input type="hidden" name="times" id="times" value="{{ @times }}" />
+
+    <p>Please select dates that will show up in the poll. You will select times in the next step.</p>
+
+    <div id="calendar" class="calendar" data-calendar-field="#date">
+        <table class="table auto-width">
+            <tr>
+                <th><button id="calendar-prev-month" class="action icon"><i class="fa fa-caret-left"></i></button></th>
+                <th class="title" colspan="6">May</th>
+                <th><button id="calendar-next-month" class="action icon"><i class="fa fa-caret-right"></i></button></th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Mo</td>
+                <td>Tu</td>
+                <td>We</td>
+                <td>Th</td>
+                <td>Fr</td>
+                <td>Sa</td>
+                <td>Su</td>
+            </tr>
+
+            <repeat group="{{ [1,2,3,4,5] }}" value="{{@week}}">
+                <tr class="week">
+                    <repeat group="{{ ['',1,2,3,4,5,6,7] }}" value="{{@day}}">
+                        <td>{{@day}}</td>
+                    </repeat>
+                </tr>
+            </repeat>
+        </table>
+    </div>
+
+    <div class="calendar-list">
+        <ul id="calendar-list"></ul>
+    </div>
+
+
+    <div class="padding-top-1"></div>
+    <div class="form-group choices-actions">
+        <button type="submit" class="btn btn-large btn-primary">
+            <span class="fa fa-check"></span>
+            Next
+        </button>
+    </div>
+</form>

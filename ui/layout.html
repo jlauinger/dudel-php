@@ -7,9 +7,9 @@
 
     <title>Dudel.php</title>
 
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet">
+    <link href="{{@BASE}}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{@BASE}}/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{@BASE}}/style/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -57,12 +57,17 @@
         &bull; AGPL licensed
         &bull; <a href="https://github.com/jlauinger/dudel-php">Open source</a>
         &bull; <a href="https://github.com/jlauinger/dudel-php/issues/new">Report a bug</a>
+        &bull; Frontend based on <a href="https://github.com/opatut/dudel">opatut/dudel</a>
+        &bull; Design based on <a href="https://github.com/max-weller/libresplit">max-weller/libresplit</a>
     </p>
 </div></footer>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="scripts/app.js"></script>
+<script src="{{@BASE}}/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{@BASE}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{@BASE}}/bower_components/moment/min/moment.min.js"></script>
+<script src="{{@BASE}}/scripts/app.js"></script>
+<script src="{{@BASE}}/scripts/util.js"></script>
+<script src="{{@BASE}}/scripts/poll_edit_choices.js"></script>
 
 </body>
 </html>

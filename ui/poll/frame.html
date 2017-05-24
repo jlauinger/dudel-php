@@ -1,0 +1,20 @@
+<div class="jumbotron pattern" style="background-color: #dddd11; margin-top: -20px; padding: 10px 0;">
+    <div class="container">
+        <h1>{{ empty(@poll[title]) ? '(no title)' : @poll[title] }}</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="padding-top-1"></div>
+    <ul class="nav nav-tabs">
+        <li class="{{ @nav=='show' ? 'active' : '' }}"><a href="{{@BASE}}/{{@poll[shortlink]}}"><span class="fa fa-calendar"></span> Poll</a></li>
+        <li class="{{ @nav=='choices' ? 'active' : '' }}"><a href="{{@BASE}}/{{@poll[shortlink]}}/choices/1"><span class="fa fa-list"></span> Choices</a></li>
+        <li class="{{ @nav=='edit' ? 'active' : '' }}"><a href="{{@BASE}}/{{@poll[shortlink]}}/edit"><span class="fa fa-cog"></span> Settings</a></li>
+    </ul>
+
+    <div class="padding-top-1"></div>
+
+    <include href="{{ @pollframe }}" />
+
+</div>

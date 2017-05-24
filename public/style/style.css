@@ -10,3 +10,707 @@
 .pattern { color:white; background-image: url("office.png");}
 
 .padding-top-1 { padding-top: 1rem; }
+.padding-left-2 { padding-left: 2rem; }
+
+.inline { display: inline-block; }
+
+.alert-default {
+    color: #333;
+    background-color: #eee;
+    border-color: #d8d8d8;
+}
+
+.choices-actions {
+    padding-top: 1rem;
+    text-align: right;
+}
+
+.auto-width {
+    width: auto;
+}
+
+.calendar {
+    display: inline-block;
+}
+.calendar table {
+    margin: 0.5em;
+    display: inline-block;
+}
+.calendar table tr:first-child {
+    background: #F6F6F6;
+}
+.calendar table tr:nth-child(2) {
+    font-size: 0.8em;
+}
+.calendar table td {
+    text-align: center;
+    padding: 4pt !important;
+}
+.calendar table td.left {
+    border-right: 1px solid #DDD;
+    border-bottom: 0;
+    border-top: 0;
+}
+.calendar table td .btn {
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+}
+.calendar .title {
+    text-align: center;
+}
+
+.calendar-list {
+    display: inline-block;
+    padding: 1em 0;
+    vertical-align: top;
+    white-space: normal;
+}
+.calendar-list ul {
+    padding: 0;
+    list-style: none;
+}
+.calendar-list ul li {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.time-buttons .btn {
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+}
+
+.time-input {
+    margin: 20px 0;
+    width: 300px;
+    display: inline-block;
+}
+
+#time-slider-form {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#time-slider-form input[type="text"] {
+    width: 2em;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 2em;
+    height: 1.7em;
+}
+
+.time-suggestions { margin: 20px 0; display: inline-block; }
+
+#poll-container.fullscreen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 11000;
+    overflow: auto;
+}
+#poll-container.fullscreen #fullscreen-header {
+    display: block;
+}
+#poll-container.fullscreen .table-padding {
+    margin: 20px;
+}
+#poll-container #fullscreen-header {
+    display: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #EEE;
+}
+#poll-container #fullscreen-header h1 {
+    margin: 0;
+}
+
+table.poll td, table.poll th, table.poll tr {
+    border: none !important;
+}
+
+table.poll {
+    border-collapse: separate !important;
+    border-spacing: 3px !important;
+}
+
+.poll, .vote {
+    font-size: 9pt;
+}
+
+table.vote label {
+    margin-top: 8px;
+}
+
+.poll .choice-text,
+.poll .choice-sum,
+.vote .choice-text {
+    white-space: nowrap;
+    font-weight: bold;
+    background: #EEE;
+}
+
+.poll .choice-sum {
+    white-space: nowrap !important;
+}
+
+.vote .choice-text {
+    text-align: right;
+}
+
+.poll .choice-group,
+.poll .author,
+.poll .vote-actions,
+.vote .choice-group {
+    font-weight: bold;
+    white-space: nowrap;
+    background: #EEE;
+    vertical-align: middle;
+}
+
+.poll .info {
+    background: #EEE;
+    text-align: center;
+}
+
+.poll .mine .author {
+    background: #444;
+    color: #FFF;
+}
+
+.poll .author {
+    padding: 0 2em;
+    text-align: right;
+}
+
+.poll .choice-group,
+.poll .choice-sum,
+.poll .choice-text {
+    text-align: center;
+    white-space: inherit;
+    max-width: 10em;
+}
+
+.vote .choice-group {
+    text-align: right;
+}
+
+.poll .choice-sum.maximum {
+    background: #AAA;
+    color: #FFF;
+}
+
+.choice-sum-value-label {
+    display: inline-block;
+    width: 24px;
+    margin-right: 4px;
+    text-align: center;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.choice-sum-value-label.large {
+    font-size: inherit;
+    width: 48px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+}
+
+.vote-choice {
+    /*border: 5px solid white;*/
+    color: white;
+    font-size: 16px;
+    min-width: 4em;
+    max-width: 10em;
+    text-align: center;
+}
+
+.vote .vote-choice {
+    width: 4em !important;
+}
+
+.vote-choice.comment {
+    background-image: url("../gfx/comment-background.png");
+}
+
+.no {
+    background: #F96;
+}
+
+.yes {
+    background: #9C6;
+}
+
+.maybe {
+    background: #FF6;
+}
+
+.yes, .no, .maybe,
+td.vote-choice span,
+td.control {
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.vote-choice-radio {
+    padding: 0;
+    list-style: none;
+}
+
+.vote-choice-radio li {
+    display: inline;
+    padding: 0;
+    margin-right: 1em;
+}
+
+td.off {
+    background-color: #D6D6D6 !important;
+}
+
+td.off, td.none {
+    text-shadow: none;
+}
+
+table.poll td.none {
+    border: 1px solid #DDD !important;
+    color: #DDD;
+}
+
+table.poll td.numeric {
+    background: #F9F9F9;
+    color: #333;
+    font-size: 9pt;
+}
+
+.vote-comment span:hover {
+    color: black;
+}
+
+.vote-comment input {
+    width: 30em;
+    vertical-align: center;
+}
+
+.choice.deleted,
+.choice.deleted .color {
+    color: #AAA;
+    background: #F9F9F9;
+}
+
+tr.choice td {
+    vertical-align: middle !important;
+}
+
+.table > tbody > tr.header {
+    background: #FFF;
+    font-weight: bold;
+    color: #888;
+    border-top: 0;
+}
+.table > tbody > tr.header > td, .table > tbody > tr.header > th {
+    padding-top: 32px;
+    border-top: 0;
+}
+
+.poll-details {
+    list-style: none;
+    margin: 4px -8px;
+    margin-bottom: 8px;
+    padding: 0;
+}
+.poll-details li {
+    display: block;
+    color: #666;
+    padding: 4px 8px;
+}
+.poll-details li .title {
+    display: inline-block;
+}
+.poll-details li .content {
+    font-weight: bold;
+}
+.poll-details li i {
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+}
+
+@media (min-width: 786px) {
+    .poll-details li {
+        display: inline-block;
+    }
+}
+.comments .comment {
+    padding: 10px;
+    min-height: 68px;
+    border: 1px solid #F6F6F6;
+    border-width: 0 2px;
+}
+.comments .comment:nth-child(2n+1) {
+    background-color: #F6F6F6;
+}
+.comments .comment:nth-child(2n):last-child {
+    border-bottom-width: 2px;
+}
+.comments .comment .meta {
+    font-size: 0.8em;
+}
+.comments .comment .meta > div {
+    display: inline;
+}
+.comments .comment .meta .author {
+    font-weight: bold;
+}
+.comments .comment .meta .edit {
+    float: right;
+}
+.comments .comment .text > *:last-child {
+    margin-bottom: 0;
+}
+.comments .comment .avatar {
+    float: left;
+}
+.comments .comment .avatar img {
+    border: 1px solid #DDD;
+    padding: 2px;
+    background: #FFF;
+    width: 48px;
+    height: 48px;
+}
+.comments .comment .meta,
+.comments .comment .text {
+    margin-left: 58px;
+}
+
+header.poll {
+    background: #F6F6F6;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+header.poll h1 {
+    margin: 0;
+}
+header.poll .poll-actions {
+    float: right;
+}
+
+.poll-tabs {
+    display: flex;
+    margin: 16px -4px 0 -4px;
+    padding: 0;
+    list-style: none;
+    align-items: flex-end;
+}
+.poll-tabs li {
+    flex: 1 1 auto;
+    margin: 0 4px;
+    padding: 0;
+}
+.poll-tabs li.vote a {
+    background: #7FDA7F;
+    color: white;
+}
+.poll-tabs li.vote a:hover {
+    background: #4FBA4F;
+}
+.poll-tabs li a {
+    text-align: center;
+    padding: 12px;
+    display: block;
+    color: #666;
+    text-decoration: none;
+    position: relative;
+    background: #EEE;
+    transition: all 0.15s;
+}
+.poll-tabs li a i {
+    font-size: 14px;
+    vertical-align: center;
+    margin-right: 4px;
+}
+.poll-tabs li a:hover {
+    background: #DDD;
+}
+.poll-tabs li a b {
+    float: right;
+    border-radius: 100px !important;
+    font-size: 9pt;
+}
+.poll-tabs li.active a, .poll-tabs li.active a:hover {
+    background: #FFF;
+    color: #666;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#main-content {
+    padding-bottom: 150px;
+}
+
+.filtered {
+    display: none;
+}
+
+.or {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    background: #EEE;
+    margin: 0 auto;
+    border: 1px solid #DDD;
+    border-radius: 100px !important;
+    color: #AAA;
+    text-align: center;
+}
+
+.popover-title {
+    font-weight: bold;
+}
+
+.popover-content .comment {
+    color: #888;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+.choice-separator {
+    font-size: 0.8em;
+    color: #888;
+    margin: 0 0.4em;
+}
+
+h1.inline {
+    display: inline-block;
+}
+
+.page-header {
+    margin-top: 0;
+}
+
+.page-header.secondary {
+    margin-top: 3em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h1 small {
+    font-size: 0.6em;
+    margin-left: 1em;
+}
+
+.checkbox-cell {
+    background-color: #F6F6F6;
+    text-align: center;
+}
+
+.checkbox-cell.on {
+    background-color: #9C6;
+}
+
+.checkbox-cell.off {
+    background-color: #F96 !important;
+}
+
+td.not-padded {
+    padding: 0 !important;
+}
+
+td.vote-comment {
+    display: block;
+    max-width: 300px;
+    padding: 4px !important;
+}
+
+.script-only {
+    display: none;
+}
+
+.color.red {
+    color: red;
+}
+.color.orange {
+    color: #F90;
+}
+.color.green {
+    color: #0A0;
+}
+
+.table-padding, .table-scroll-x, .table-noscroll-y {
+    overflow: visible !important;
+}
+
+.table-padding, .table-scroll-x, .table-noscroll-y {
+    overflow-x: auto !important;
+}
+
+.steps {
+    width: 100%;
+    list-style: none;
+    margin: 1em 0;
+    background: #F6F6F6;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+    display: table;
+    padding: 0;
+}
+
+.steps li {
+    display: table-cell;
+    width: 25%;
+    padding: 0.5em 1em;
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #FFF;
+    background: -webkit-gradient(linear, left top, left bottom, from(#F6F6F6), to(#EEE));
+    color: #888;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+.steps li.current {
+    background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#F6F6F6));
+    font-weight: bold;
+}
+
+.steps li:last-child {
+    border-right: 0;
+}
+
+.steps li:first-child {
+    border-left: 0;
+}
+
+.steps li span {
+    display: block;
+    color: rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
+    font-size: 1.2em;
+}
+
+.monospace {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.print-only {
+    display: none;
+}
+
+.current-user {
+    vertical-align: top;
+    color: white;
+    position: relative;
+    padding-left: 40px !important;
+}
+.current-user img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+.red {
+    color: red;
+}
+
+.danger-zone {
+    border: 10px solid #A00;
+    border-width: 10px 0;
+    background: silver;
+    padding: 32px;
+    max-width: 500px;
+    margin: 64px auto;
+}
+.danger-zone > :first-child {
+    margin-top: 0;
+}
+.danger-zone > :last-child {
+    margin-bottom: 0;
+}
+.danger-zone h2 i.fa {
+    margin-right: 10px;
+}
+.danger-zone hr {
+    border-color: #BBB;
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+#error-page {
+    max-width: 360px;
+    text-align: center;
+    margin: 100px auto;
+}
+#error-page .fa {
+    font-size: 100px;
+}
+#error-page p {
+    color: #777;
+}
+
+.container-full {
+    margin: 0 40px;
+}
+
+.container.small {
+    max-width: 720px;
+}
+
+.page-header {
+    margin-top: 40px;
+}
+
+.poll-overview .fa {
+    margin-right: 4px;
+}
+
+.halfsize {
+    max-width: 585px;
+    margin: 0 auto;
+}
+
+.initial-hidden {
+    opacity: 0;
+}
+
+.help-block {
+    transition: opacity 0.3s;
+}
+
+.padded-cells > * {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+section.flashes .alert:last-child {
+    margin-bottom: 1px;
+}
+
+table tr.highlight td {
+    background: #CDF;
+}

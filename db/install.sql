@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dudels`
+-- Table structure for table `polls`
 --
 
-DROP TABLE IF EXISTS `dudels`;
+DROP TABLE IF EXISTS `polls`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dudels` (
+CREATE TABLE `polls` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
@@ -34,7 +34,7 @@ CREATE TABLE `dudels` (
   UNIQUE KEY `dudels_shortlink_uindex` (`shortlink`),
   KEY `dudels_users_id_fk` (`owner_id`),
   CONSTRAINT `dudels_users_id_fk` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,12 +46,12 @@ DROP TABLE IF EXISTS `slots`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `slots` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dudel_id` int(11) NOT NULL,
+  `poll_id` int(11) NOT NULL,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `slots_dudels_id_fk` (`dudel_id`),
-  CONSTRAINT `slots_dudels_id_fk` FOREIGN KEY (`dudel_id`) REFERENCES `dudels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `slots_polls_id_fk` (`poll_id`),
+  CONSTRAINT `slots_polls_id_fk` FOREIGN KEY (`poll_id`) REFERENCES `polls` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,4 +105,4 @@ CREATE TABLE `votes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-23 19:32:08
+-- Dump completed on 2017-05-24  2:12:20
