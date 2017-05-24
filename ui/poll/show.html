@@ -14,6 +14,8 @@
 <div class="panel panel-primary">
     <div class="panel-heading">Voting</div>
     <div class="panel-body">
-
+        <repeat group="{{@slots}}" value="{{@slot}}">
+            <p>{{@slot->toString()}}</p>
+        </repeat>
     </div>
 </div>

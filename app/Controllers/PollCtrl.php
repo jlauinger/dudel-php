@@ -18,6 +18,7 @@ class PollCtrl {
         $polls = new Poll($f3);
         $poll = $polls->findone(array('shortlink=?', $params["shortlink"]));
         $f3->set("poll", $poll);
+        $f3->set("slots", $poll->getSlots());
         $f3->set("nav", "show");
         $f3->set("pollframe", "poll/show.html");
         $f3->set("content", "poll/frame.html");

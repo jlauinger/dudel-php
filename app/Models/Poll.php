@@ -17,11 +17,11 @@ class Poll extends \DB\SQL\Mapper {
 
     public function getSlots() {
         $slots = new Slot($this->f3);
-        return $slots->find(array("poll_id=?", $this->id));
+        return Slot::fromArray($this->f3, $slots->find(array("poll_id=?", $this->id)));
     }
 
     public function setChoices(array $datetimes) {
-        $existingSlots = Slot::fromArray($this->f3, $this->getSlots());
+        $existingSlots = $this->getSlots();
         // delete slots that are not any more used
         foreach($existingSlots as $slot) {
             if (!in_array($slot->toString(), $datetimes)) {
